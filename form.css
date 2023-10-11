@@ -27,13 +27,16 @@
   height: auto;
   border: 3px solid #f1f1f1;
   z-index: 9;
-  overflow: auto;
+  /* overflow: scroll; */
 }
 
 .form-container {
   max-width: 500px;
-  max-height: auto;
-  /* overflow: scroll; */
+  /* height: 100vh; */
+  /* max-height: 1200px; */
+  max-height: 100vh;
+  /* margin: 20vh auto; */
+  overflow: scroll;
   height: auto;
   padding: 10px;
   background-color: white;

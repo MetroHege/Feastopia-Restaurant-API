@@ -1,11 +1,11 @@
 "use strict";
 
 const files = [
-  "./Kissa-hammas.jpg",
+  "./",
   "./index.html",
-  "./main.js",
   "./main.css",
-  "./Roboto-Black.ttf",
+  "./form.css",
+  "./build"
 ];
 
 self.addEventListener("install", (event) => {
