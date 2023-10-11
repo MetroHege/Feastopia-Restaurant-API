@@ -1,0 +1,103 @@
+.loginForm {
+  z-index: 1;
+}
+
+.open-button {
+  background-color: var(--button);
+  color: white;
+  padding: 16px 40px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+}
+
+.open-button:hover {
+  background-color: var(--buttonHover);
+  transition: 0.3s;
+}
+
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 0px;
+  height: auto;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+  overflow: auto;
+}
+
+.form-container {
+  max-width: 500px;
+  max-height: auto;
+  /* overflow: scroll; */
+  height: auto;
+  padding: 10px;
+  background-color: white;
+  border: 4px solid var(--button);
+}
+
+.form-container input[type=text], .form-container input[type=password], .form-container input[type=email], .form-container input[type="avatar"] {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+.form-container input[type=text]:focus, .form-container input[type=password]:focus , .form-container input[type=email]:focus, .form-container input[type="avatar"]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+.form-container .cancel {
+  color: white;
+  padding: 16px 20px;
+  margin-top: 10px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  background-color: red;
+}
+
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+/*----------------------------Added content in form----------------------*/
+
+#username, #password {
+  margin-bottom: 0.5rem;
+}
+
+.form-control input[type="submit"] {
+  background-color: var(--button);
+  color: var(--buttonText);
+  margin-top: 10px;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.form-container input[type="submit"]:hover {
+  background-color: var(--buttonHover);
+  transition: 0.3s;
+}
+
+#profile-username, #profile-email {
+  margin-bottom: 0.5rem;
+}
+
+#username-target, #email-target {
+  text-decoration: underline;
+}
+
+#avatar-target {
+  max-width: 250px;
+  border-radius: 50%;
+}

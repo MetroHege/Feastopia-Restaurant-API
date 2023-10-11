@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feastopia</title>
+  <link href="main.css" rel="stylesheet">
+  <link href="form.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/x-icon" href="/img/F-circle.png">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <script src="build/index.js" type="module"></script>
+  <script src="build/form.js" type="module"></script>
+  <script src="https://kit.fontawesome.com/5c781a3f7a.js" crossorigin="anonymous"></script>
+
+  <!-- PWA -->
+  <meta http-equiv=”Refresh” content=”0;URL=https://users.metropolia.fi/~henriole/Web-kehityksen%20perusteet/HTMLCSS/Feastopia%20PWA/” />
+  <link rel="manifest" href="manifest.json">
+  <script src="build/main.js"></script>
+  <meta name="theme-color" content="#12bb00"/>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="icon/icon-152x152.png">
+  <meta name="theme-color" content="white"/>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Feastopia">
+  <meta name="msapplication-TileImage" content="icon/icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+
+
+
+</head>
+<body>
+  <div class="loginForm">
+    <button class="open-button" onclick="openForm()">Kirjaudu</button>
+
+<div class="form-popup" id="myForm">
+  <section class="form-container">
+    <div class="container">
+      <section id="login">
+        <h2>Kirjaudu sisään</h2>
+        <p>Kirjaudu nähdäksesi käyttäjätietosi</p>
+        <form id="login-form">
+          <div class="form-control">
+            <input id="username" type="text" name="username" autocomplete="username"/>
+            <label for="username">Käyttäjätunnus</label>
+          </div>
+          <div class="form-control">
+            <input id="password" type="password" name="password" />
+            <label for="password">Salasana</label>
+          </div>
+          <div class="form-control">
+            <input type="submit" value="Kirjaudu" class="button" />
+          </div>
+        </form>
+      </section>
+      <section id="profile">
+        <h2>Profiili</h2>
+        <p>Käyttätunnus: <span id="username-target"></span></p>
+        <p>Sähköposti: <span id="email-target"></span></p>
+        <img id="avatar-target" src="" alt="Avatar" />
+        <hr />
+        <h2>Muokkaa profiilia</h2>
+        <form id="profile-form">
+          <div class="form-control">
+            <input id="profile-username" type="text" name="username" autocomplete="profile-username"/>
+            <label for="profile-username">Käyttäjänimi</label>
+          </div>
+          <div class="form-control">
+            <input id="profile-email" type="email" name="email" autocomplete="profile-email"/>
+            <label for="profile-email">Sähköposti</label>
+          </div>
+          <div class="form-control">
+            <input type="submit" value="Päivitä" class="button" />
+          </div>
+        </form>
+        <hr />
+        <h2>Lataa avatar</h2>
+        <form id="avatar-form">
+          <div class="form-control">
+            <input id="avatar" type="file" name="avatar" />
+            <label for="avatar">Valitse kuva</label>
+          </div>
+          <div class="form-control">
+            <input type="submit" value="Lähetä" class="button" />
+          </div>
+        </form>
+      </section>
+      <button type="button" class="btn cancel" onclick="closeForm()">Sulje</button>
+    </div>
+  </section>
+  <script>
+    function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+  </script>
+</div>
+</div>
+  <div class="navbar">
+    <img src="img/Feastopia-4.png" alt="Feastopia" class="logo">
+    <div class="dropdown">
+      <button class="dropbtn">Suodata ravintolan mukaan</button>
+      <div class="dropdown-content">
+        <a href="#" id="sodexo">Sodexo</a>
+        <a href="#" id="compass">Compass Group</a>
+        <a href="#" id="reset">Näytä kaikki</a>
+      </div>
+    </div>
+    <div class="child">
+      <div class="dropdown">
+        <button class="dropbtn">Suodata päivä/viikko</button>
+        <div class="dropdown-content">
+          <a href="#" id="day">Päivä</a>
+          <a href="#" id="week">Viikko</a>
+        </div>
+      </div>
+    </div>
+    <div id="checkboxDark">
+      <input type="checkbox" class="checkbox" id="checkbox">
+      <label for="checkbox" class="checkbox-label">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+        <span class="ball"></span>
+      </label>
+    </div>
+  </div>
+  <section class="infoContent">
+    <h1>Ravintolahaku</h1>
+    <p>Tarkastele lempiravintoloidesi ruokalistoja vaivatta!</p>
+    <p>Klikkaa haluamaasi ravintolaa ja katso mitä tänään on tarjolla.</p>
+  </section>
+  <div id="table">
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+    </tr>
+    <!-- add restaurants here -->
+  </table>
+  </div>
+  <!-- modal -->
+  <dialog id="mainDialog">
+    <!-- add restaurant info here when restaurant is clicked -->
+  </dialog>
+  <footer>
+        <p>Copyright,</p>
+        <img src="img/Feastopia-3.png" alt="Feastopia" class="footerLogo">
+  </footer>
+</body>
+
+</html>
