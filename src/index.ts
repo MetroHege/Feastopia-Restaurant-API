@@ -317,5 +317,20 @@ checkbox?.addEventListener("change", () => {
   document.querySelector("dialog")?.classList.toggle("dialogDark")
   document.querySelector("form")?.classList.toggle("formDark")
   document.querySelector("main")?.classList.toggle("mainDark")
-  document.querySelector("section")?.classList.toggle("sectionDark")
 })
+
+// add id to form-container section element when checkbox is checked
+const checkboxId = document.getElementById("checkbox") as HTMLInputElement;
+const formContainer = document.querySelector("section.form-container");
+
+checkboxId?.addEventListener("change", () => {
+  if (checkboxId.checked) {
+    if (formContainer) {
+      formContainer.id = "form-container";
+    }
+  } else {
+    if (formContainer) {
+      formContainer.removeAttribute("id");
+    }
+  }
+});

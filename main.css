@@ -305,6 +305,11 @@ body.dark h1, body.dark p, body.dark h2 {
   color: #111;
 }
 
+#form-container {
+  background-color: var(--mainColorDark);
+  color: var(--textColorDark);
+}
+
 /*-------------------MEDIA-------------------*/
 
 @media only screen and (max-width:900px) {
@@ -382,4 +387,3 @@ body.dark h1, body.dark p, body.dark h2 {
     right: 10;
   }
 }
-
